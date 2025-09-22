@@ -1,0 +1,91 @@
+<p>Styling later, stuff on screen now!</p>
+
+<!-- Customization options for users in the initial setup of the game 
+ 
+    - username
+    - color selection
+    - number of players
+    - number of rounds
+    - difficulty
+    - genre / category of movies
+    - time limit per question
+    - type of questions (multiple choice, true/false, fill in the blank, emoji)
+    
+-->
+
+<!-- username input-->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" placeholder="Enter your username">
+<br><br>
+
+<!-- color selection -->
+<label for="color">Choose your color:</label>
+<input type="color" id="color" name="color" value="#ff0000"> 
+<br><br>
+
+<!-- number of players stepper -->
+<label for="numPlayers">Number of Players:</label>
+<input type="number" id="numPlayers" name="numPlayers" min="1" max="4" step="1" value="1">
+<br><br>
+
+<!-- number of rounds stepper -->
+<label for="numRounds">Number of Rounds:</label>
+<input type="number" id="numRounds" name="numRounds" min="1" max="10" step="1" value="1">
+<br><br>
+
+<!-- difficulty selection (easy, medium, hard) -->
+<input type="radio" id="easy" name="difficulty" value="easy" checked>
+<label for="easy">Easy</label>
+<br>
+<input type="radio" id="medium" name="difficulty" value="medium">
+<label for="medium">Medium</label>
+<br>
+<input type="radio" id="hard" name="difficulty" value="hard">
+<label for="hard">Hard</label>
+<br><br>
+
+<!-- genre / category of movies (action, comedy, drama, horror, sci-fi, romance, animated, etc.) -->
+<label for="genre">Select Movie Genres:</label><br>
+<input type="checkbox" id="action" name="genre" value="action" checked>
+<label for="action">Action</label>
+<br>
+<input type="checkbox" id="comedy" name="genre" value="comedy">
+<label for="comedy">Comedy</label>
+<br>
+<input type="checkbox" id="drama" name="genre" value="drama">
+<label for="drama">Drama</label>
+<br>
+<input type="checkbox" id="horror" name="genre" value="horror">
+<label for="horror">Horror</label>
+<br>
+<input type="checkbox" id="sci-fi" name="genre" value="sci-fi">
+<label for="sci-fi">Sci-Fi</label>
+<br>
+<input type="checkbox" id="romance" name="genre" value="romance">
+<label for="romance">Romance</label>
+<br>
+<input type="checkbox" id="animated" name="genre" value="animated">
+<label for="animated">Animated</label>
+<br><br>
+
+<!-- time limit per question stepper (5, 10, 15, 20 seconds) -->
+<label for="timeLimit">Time Limit per Question (seconds)</label>
+<input type="number" id="timeLimit" name="timeLimit" min="5" max="60" step="5" value="15">
+<br><br>
+
+<!-- type of questions (multiple choice, true/false, fill in the blank, emoji) -->
+<label for="questionType">Select Question Type:</label><br>
+<input type="radio" id="multipleChoice" name="questionType" value="multipleChoice" checked>
+<label for="multipleChoice">Multiple Choice</label>
+<br>
+<input type="radio" id="trueFalse" name="questionType" value="trueFalse">
+<label for="trueFalse">True/False</label>
+<br>
+<input type="radio" id="fillInTheBlank" name="questionType" value="fillInTheBlank">
+<label for="fillInTheBlank">Fill in the Blank</label>
+<br>
+<input type="radio" id="emoji" name="questionType" value="emoji">
+<label for="emoji">Emoji</label>
+<br><br>
+
+<button (click)="startGame()">Start Game</button>

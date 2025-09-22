@@ -1,0 +1,16 @@
+#header {
+    text-align: center;
+    background-color: #bcbcbc;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+}

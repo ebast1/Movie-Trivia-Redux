@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* makes sure they expand to full height */
+}
+
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* takes up the full viewport */
+  width: 100vw;  /* full viewport width */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}

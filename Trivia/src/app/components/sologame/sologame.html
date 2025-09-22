@@ -1,0 +1,60 @@
+<div class="game-container">
+
+  <div *ngIf="!movie">
+    <p>Loading movie...</p>
+  </div> <!-- End of Loading Div -->
+
+  <div *ngIf="movie" class="question-box">
+    <h1>Guess the Movie!</h1>
+
+    <p>Plot: {{ movie?.Plot }}</p>
+    <p>Actors: {{ movie?.Actors }}</p>
+    <p>Director: {{ movie?.Director }}</p>
+    <p>Year: {{ movie?.Year }}</p>
+    <p> Genre: {{ movie?.Genre }}</p>
+  </div> <!-- End of Question Box Div -->
+ 
+  <div class="answer-box"> 
+
+    <p><strong>Round: </strong>{{ gameData.getRound() + 1 }} / {{ gameData.getTotalRounds() }}<strong> Score: </strong>{{ gameData.getScore() }} point(s)</p>
+
+    <div class="buttons-and-input">
+      <span *ngIf="gameData.getRound() < gameData.getTotalRounds() - 1">
+        <button class="button-1" 
+          [class.disabled]="!hasAnswered"
+          [disabled]="!hasAnswered"
+          (click)="next()">Next Round
+        </button>
+      </span>
+
+      <span *ngIf="gameData.getRound() === gameData.getTotalRounds() - 1">
+        <button class="button-1" 
+          [class.disabled]="!hasAnswered"
+          [disabled]="!hasAnswered"
+          (click)="endGame()">End Game
+        </button>
+      </span>
+
+      <span>
+        &nbsp; &nbsp;
+        <input class="input" type="text" [(ngModel)]="userInput" placeholder="Type your answer..." />
+        &nbsp; &nbsp;
+        <button class="button-1" 
+          [class.disabled]="hasAnswered"
+          [disabled]="hasAnswered"
+          (click)="checkAnswer()">Submit Guess
+        </button>
+      </span>
+
+    </div> <!-- End of Buttons and Input Div -->
+
+    <div *ngIf="reveal">
+      <h2>{{ movie?.Title }}</h2>
+      <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" class="poster"/>
+    </div> <!-- End of Reveal Div -->
+
+    <p *ngIf = "result">{{result}}</p>
+
+  </div> <!-- End of Answer Box Div -->
+
+</div> <!-- End of Game Container Div -->

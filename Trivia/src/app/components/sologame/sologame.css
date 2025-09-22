@@ -1,0 +1,103 @@
+.game-container {
+  width: 60% fixed;
+  height: 30%;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin: 0 auto;
+  margin-top: 10px;
+
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.question {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.answer-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.poster {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button style from https://getcssscan.com/css-buttons-examples */
+
+.button-1 {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+
+.button-1:disabled {
+  background-color: #CCCCCC;
+  cursor: not-allowed;
+}
+
+/* --------------------------------- */
+
+/* Input box style from https://uiverse.io/ErzenXz/horrible-rattlesnake-14 */
+
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 40px;
+  padding: 10p 16px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  font-size: 16px;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: auto;
+  line-height: 20px;
+  text-align: center;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid #EA4C89;
+}
+
+/* --------------------------------- */
