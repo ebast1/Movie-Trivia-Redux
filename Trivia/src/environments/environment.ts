@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    omdbApiUrl: 'http://www.omdbapi.com/',
+    omdbApiUrl: 'https://www.omdbapi.com/',
     omdbApiKey: '8a8ceae'
 
     // SearchMovie()
