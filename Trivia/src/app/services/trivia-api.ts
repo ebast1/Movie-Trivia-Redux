@@ -22,7 +22,7 @@ export class TriviaApi {
   }
 
   async getMovieById(id: string) : Promise<any> {
-    const result = await lastValueFrom(this.http.get<any>(this.apiUrl + this.apiKey + 'i={id}'.replace('{id}', id)));
+    const result = await lastValueFrom(this.http.get<any>(this.apiUrl + '?apikey=' + this.apiKey + '&' + 'i={id}'.replace('{id}', id)));
     console.log(result);
     return result;
   }
