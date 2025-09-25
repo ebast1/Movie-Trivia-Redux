@@ -23,14 +23,12 @@ export class Sologame implements OnInit {
   hasAnswered: boolean = false;
 
   testApi(): void {
-    this.triviaApi.searchMovie("A Man Called Otto")
-      .then((data: any) => {
-        this.movie = data;
-        console.log("Movie fetched by ID:", data);
-      })
-      .catch((err: any) => {
-        console.error('Error fetching movie by ID:', err);
+    this.triviaApi.getMovieByTitle("A Man Called Otto")
+      .subscribe(response => {
+        console.log(response);
+        this.movie = response.results[0];
       });
+
   }
 
   ngOnInit() {
@@ -63,14 +61,7 @@ export class Sologame implements OnInit {
     console.log('Point added! Current score:', this.gameData.getScore());
   }
   
-  /*
-    revealAnswer() {
-        this.reveal = !this.reveal;
-    }
-  */
-
   endGame() {
-    // Navigate to end game component
     this.router.navigate(['/endGame']);
   }
 

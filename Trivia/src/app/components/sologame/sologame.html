@@ -7,11 +7,12 @@
   <div *ngIf="movie" class="question-box">
     <h1>Guess the Movie!</h1>
 
-    <p>Plot: {{ movie?.Plot }}</p>
-    <p>Actors: {{ movie?.Actors }}</p>
-    <p>Director: {{ movie?.Director }}</p>
-    <p>Year: {{ movie?.Year }}</p>
-    <p> Genre: {{ movie?.Genre }}</p>
+    <p>Plot: {{ movie?.overview }}</p>
+    <!-- <p>Actors: {{ movie?.Actors }}</p> -->
+    <!-- <p>Director: {{ movie?.Director }}</p> -->
+    <p>Year: {{ movie?.release_date }}</p>
+    <!-- <p> Genre: {{ movie?.Genre }}</p> -->
+    
   </div> <!-- End of Question Box Div -->
  
   <div class="answer-box"> 
@@ -49,8 +50,8 @@
     </div> <!-- End of Buttons and Input Div -->
 
     <div *ngIf="reveal">
-      <h2>{{ movie?.Title }}</h2>
-      <img [src] = "movie?.Poster" alt="Poster of {{ movie?.Title }}" class="poster"/>
+      <h2>{{ movie?.title }}</h2>
+      <img [src] = "movie?.poster_path" alt="Poster of {{ movie?.title }}" class="poster"/>
     </div> <!-- End of Reveal Div -->
 
     <p *ngIf = "result">{{result}}</p>
@@ -58,3 +59,5 @@
   </div> <!-- End of Answer Box Div -->
 
 </div> <!-- End of Game Container Div -->
+
+<button (click)="testApi()">Test API Call</button>
