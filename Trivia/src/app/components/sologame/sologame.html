@@ -51,7 +51,7 @@
 
     <div *ngIf="reveal">
       <h2>{{ movie?.title }}</h2>
-      <img [src] = "movie?.poster_path" alt="Poster of {{ movie?.title }}" class="poster"/>
+      <img [src]="posterUrl" [alt]="'Poster of ' + movie?.title" class="poster"/>
     </div> <!-- End of Reveal Div -->
 
     <p *ngIf = "result">{{result}}</p>
@@ -60,4 +60,4 @@
 
 </div> <!-- End of Game Container Div -->
 
-<button (click)="testApi()">Test API Call</button>
+<button class="button-1" (click)="testApi()">Test API Call</button>

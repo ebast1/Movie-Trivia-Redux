@@ -66,4 +66,18 @@ export class GameSelection {
     this.router.navigate(['/soloGame']);
   }
 
+  addRound() {
+    if (this.rounds < 10) {
+      this.rounds++;
+      this.roundsInput.value = this.rounds.toString();
+    }
+  }
+
+  removeRound() {
+    if (this.rounds > 1) {
+      this.rounds--;
+      this.roundsInput.value = this.rounds.toString();
+    }
+  }
+
 }

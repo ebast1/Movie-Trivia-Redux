@@ -21,14 +21,18 @@ export class Sologame implements OnInit {
   userInput: string = " ";
   result: string = " ";
   hasAnswered: boolean = false;
+  posterUrl: string = "";
+
+  // Test function to verify TMDB API integration
 
   testApi(): void {
     this.triviaApi.getMovieByTitle("A Man Called Otto")
       .subscribe(response => {
         console.log(response);
         this.movie = response.results[0];
+        this.posterUrl = `https://image.tmdb.org/t/p/w500${response.results[0].poster_path}`;
+        console.log('Poster URL:', this.posterUrl);
       });
-
   }
 
   ngOnInit() {
@@ -66,14 +70,14 @@ export class Sologame implements OnInit {
   }
 
   checkAnswer() { 
-    if (this.userInput.trim().toLowerCase() === this.movie.Title.trim().toLowerCase()) {
+    if (this.userInput.trim().toLowerCase() === this.movie.title.trim().toLowerCase()) {
       this.result = "Correct!";
       this.addPoint();
     } else {
-      this.result = `Incorrect! The correct answer was: ${this.movie.Title}`;
+      this.result = `Incorrect! The correct answer was: ${this.movie.title}`;
     }
     console.log(this.userInput.trim().toLowerCase());
-    console.log(this.movie.Title.trim().toLowerCase());
+    console.log(this.movie.title.trim().toLowerCase());
     this.hasAnswered = true;
     this.reveal = true;
   }

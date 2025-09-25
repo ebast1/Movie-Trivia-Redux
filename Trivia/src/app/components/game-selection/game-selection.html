@@ -1,5 +1,3 @@
-<p>Styling later, stuff on screen now!</p>
-
 <!-- Customization options for users in the initial setup of the game 
  
     - username
@@ -12,28 +10,46 @@
     - type of questions (multiple choice, true/false, fill in the blank, emoji)
     
 -->
+<div class="game-container">
+<h1>Game Setup</h1>
 
 <!-- username input-->
+<!-- Commenting out for now, can reintroduce later if needed
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" placeholder="Enter your username">
 <br><br>
+-->
 
 <!-- color selection -->
+<!-- For now, we will default to a standard color as custom color selection is not yet implemented
 <label for="color">Choose your color:</label>
 <input type="color" id="color" name="color" value="#ff0000"> 
 <br><br>
+-->
 
 <!-- number of players stepper -->
+<!-- For now, we will default to 1 player as multiplayer is not yet implemented 
 <label for="numPlayers">Number of Players:</label>
 <input type="number" id="numPlayers" name="numPlayers" min="1" max="4" step="1" value="1">
 <br><br>
+-->
 
 <!-- number of rounds stepper -->
+<!-- Commenting out the input box and replacing with +/- buttons to control rounds
 <label for="numRounds">Number of Rounds:</label>
 <input type="number" id="numRounds" name="numRounds" min="1" max="10" step="1" value="1">
 <br><br>
+-->
+<h2>Number of Rounds: </h2>
+<span class="rounds-control">
+    <button class="button-1" (click)="addRound()">+</button>
+    <p>{{ rounds }}</p>
+    <button class="button-1" (click)="removeRound()">-</button>
+</span>
+
 
 <!-- difficulty selection (easy, medium, hard) -->
+<!-- Commenting out for now, can reintroduce later if needed
 <input type="radio" id="easy" name="difficulty" value="easy" checked>
 <label for="easy">Easy</label>
 <br>
@@ -43,8 +59,10 @@
 <input type="radio" id="hard" name="difficulty" value="hard">
 <label for="hard">Hard</label>
 <br><br>
+-->
 
 <!-- genre / category of movies (action, comedy, drama, horror, sci-fi, romance, animated, etc.) -->
+<!-- 
 <label for="genre">Select Movie Genres:</label><br>
 <input type="checkbox" id="action" name="genre" value="action" checked>
 <label for="action">Action</label>
@@ -67,13 +85,235 @@
 <input type="checkbox" id="animated" name="genre" value="animated">
 <label for="animated">Animated</label>
 <br><br>
+-->
+
+<!--
+    Action
+    Adventure
+    Animation
+    Comedy
+    Crime
+    Documentary
+    Drama
+    Family
+    Fantasy
+    History
+    Horror
+    Music
+    Mystery
+    Romance
+    Science Fiction
+    TV Movie
+    Thriller
+    War
+    Western
+-->
+
+<h2>Select Movie Genres:</h2>
+
+<div class="parent">
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-1" class="inp-cbx" />
+    <label for="cbx-1" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Action</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-2" class="inp-cbx" />
+    <label for="cbx-2" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Adventure</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-3" class="inp-cbx" />
+    <label for="cbx-3" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Animation</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-4" class="inp-cbx" />
+    <label for="cbx-4" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Comedy</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-5" class="inp-cbx" />
+    <label for="cbx-5" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Crime</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-6" class="inp-cbx" />
+    <label for="cbx-6" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Documentary</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-7" class="inp-cbx" />
+    <label for="cbx-7" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Drama</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-8" class="inp-cbx" />
+    <label for="cbx-8" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Family</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-9" class="inp-cbx" />
+    <label for="cbx-9" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Fantasy</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-10" class="inp-cbx" />
+    <label for="cbx-10" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>History</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-11" class="inp-cbx" />
+    <label for="cbx-11" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Horror</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-12" class="inp-cbx" />
+    <label for="cbx-12" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Music</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-13" class="inp-cbx" />
+    <label for="cbx-13" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Mystery</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-14" class="inp-cbx" />
+    <label for="cbx-14" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Romance</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-15" class="inp-cbx" />
+    <label for="cbx-15" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Science Fiction</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-16" class="inp-cbx" />
+    <label for="cbx-16" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>TV Movie</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-17" class="inp-cbx" />
+    <label for="cbx-17" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Thriller</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-18" class="inp-cbx" />
+    <label for="cbx-18" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>War</span>
+    </label>
+    </div>
+
+    <div class="checkbox-wrapper-46">
+    <input type="checkbox" id="cbx-19" class="inp-cbx" />
+    <label for="cbx-19" class="cbx"
+        ><span>
+        <svg viewBox="0 0 12 10" height="10px" width="12px">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+        ><span>Western</span>
+    </label>
+    </div>
+</div> <!-- End of Parent Div -->
+
+<br><br>
 
 <!-- time limit per question stepper (5, 10, 15, 20 seconds) -->
+<!-- Commenting out for now, can reintroduce later if needed
 <label for="timeLimit">Time Limit per Question (seconds)</label>
 <input type="number" id="timeLimit" name="timeLimit" min="5" max="60" step="5" value="15">
 <br><br>
+-->
 
 <!-- type of questions (multiple choice, true/false, fill in the blank, emoji) -->
+<!-- Commenting out for now, can reintroduce later if needed
 <label for="questionType">Select Question Type:</label><br>
 <input type="radio" id="multipleChoice" name="questionType" value="multipleChoice" checked>
 <label for="multipleChoice">Multiple Choice</label>
@@ -87,5 +327,6 @@
 <input type="radio" id="emoji" name="questionType" value="emoji">
 <label for="emoji">Emoji</label>
 <br><br>
+-->
 
-<button (click)="startGame()">Start Game</button>
+<button (click)="startGame()" class="button-1">Start Game</button>
