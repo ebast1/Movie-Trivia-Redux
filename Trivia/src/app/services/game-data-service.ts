@@ -13,15 +13,9 @@ export class GameDataService {
 
   private moviePool: any[] = [];
   private selectedMovies: any[] = [];
-  
-  private username = '';
-  private color = '';
-  private numberOfPlayers = 1;
+
   private numberOfRounds = 1;
-  private difficulty = 'easy'; // default difficulty
-  private genre = 'action'; // default genre
-  private timeLimit = 30; // default time limit
-  private questionType = 'multiple-choice'; // default question type
+  private selectedGenres : number[] = [];
 
   private currentScore = 0;
   private currentRound = 0;
@@ -78,18 +72,31 @@ export class GameDataService {
   }
   
   getTotalRounds() {
-    return this.selectedMovies.length;
+    return this.numberOfRounds;
   }
 
   // -------- Game Settings Management -------- //
   // See if the game data is being set correctly in the GameDataService from the GameSelection component
 
-  setGameData(data: any) {
-    this.gameData = data;
-  }
-
   getGameData() {
     return this.gameData;
   }
 
+  setSelectedGenres(genres: number[]) {
+    this.selectedGenres = genres;
+    console.log('Selected genres set:', this.selectedGenres);
+  }
+
+  getSelectedGenres() {
+    return this.selectedGenres;
+  }
+
+  setRounds(rounds: number) {
+    this.numberOfRounds = rounds;
+  }
+
+  getRounds() {
+    return this.numberOfRounds;
+  }
+  
 }

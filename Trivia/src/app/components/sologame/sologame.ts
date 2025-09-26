@@ -22,6 +22,7 @@ export class Sologame implements OnInit {
   result: string = " ";
   hasAnswered: boolean = false;
   posterUrl: string = "";
+  rounds: number = 0;
 
   // Test function to verify TMDB API integration
 
@@ -41,6 +42,10 @@ export class Sologame implements OnInit {
     this.gameData.startNewGame(10);
     this.loadMovie();
     });
+
+    const genres = this.gameData.getSelectedGenres();
+    console.log("Genres in solo game:", genres);
+    
   }
 
   async loadMovie() {
@@ -49,6 +54,11 @@ export class Sologame implements OnInit {
     this.result = " ";
   }
 
+  getTotalRounds() {
+    return this.gameData.getTotalRounds();
+  }
+
+  // GAME LOGIC
   next() {
     this.gameData.nextRound();
     if (this.gameData.getRound() < this.gameData.getTotalRounds()) {
@@ -82,4 +92,7 @@ export class Sologame implements OnInit {
     this.reveal = true;
   }
 
+
 }
+
+
