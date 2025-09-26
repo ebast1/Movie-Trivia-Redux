@@ -10,29 +10,27 @@ import { GameDataService } from '../../services/game-data-service';
 })
 export class GameSelection {
 
-  rounds: number = 1;
-  selectedGenres: number[] = [];
-  
-  constructor(private router: Router, private gameDataService: GameDataService) {}
+  constructor(private router: Router, private gameData: GameDataService) {}
+
+  rounds: number = 1;  
 
   onGenreChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
-    const genreId = +checkbox.value; // convert string to number
+    const genreId = +checkbox.value;
+
+    let genres = this.gameData.getSelectedGenres();
 
     if (checkbox.checked) {
-      this.selectedGenres.push(genreId);
+      genres.push(genreId);
     } else {
-      this.selectedGenres = this.selectedGenres.filter(id => id !== genreId);
+      genres = genres.filter(id => id !== genreId);
     }
 
-    // send updated genres to your service
-    this.gameDataService.setSelectedGenres(this.selectedGenres);
+    this.gameData.setSelectedGenres(genres);
   }
 
   startGame() {
-    this.gameDataService.setRounds(this.rounds);
-    console.log('Starting game with rounds:', this.rounds);
-    console.log('Selected genres:', this.selectedGenres);
+    this.gameData.setRounds(this.rounds);
     this.router.navigate(['/soloGame']);
   }
 

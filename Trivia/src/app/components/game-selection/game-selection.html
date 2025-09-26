@@ -42,9 +42,9 @@
 -->
 <h2>Number of Rounds: </h2>
 <span class="rounds-control">
-    <button class="button-1" (click)="addRound()">+</button>
-    <p>{{ rounds }}</p>
     <button class="button-1" (click)="removeRound()">-</button>
+    <p>{{ rounds }}</p>
+    <button class="button-1" (click)="addRound()">+</button>
 </span>
 
 
@@ -123,7 +123,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-2" class="inp-cbx" />
+    <input type="checkbox" id="cbx-2" class="inp-cbx" [value]="12" (change)="onGenreChange($event)"/>
     <label for="cbx-2" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -133,7 +133,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-3" class="inp-cbx" />
+    <input type="checkbox" id="cbx-3" class="inp-cbx" [value]="16" (change)="onGenreChange($event)"/>
     <label for="cbx-3" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -143,7 +143,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-4" class="inp-cbx" />
+    <input type="checkbox" id="cbx-4" class="inp-cbx" [value]="35" (change)="onGenreChange($event)"/>
     <label for="cbx-4" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -153,7 +153,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-5" class="inp-cbx" />
+    <input type="checkbox" id="cbx-5" class="inp-cbx" [value]="80" (change)="onGenreChange($event)"/>
     <label for="cbx-5" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -163,7 +163,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-6" class="inp-cbx" />
+    <input type="checkbox" id="cbx-6" class="inp-cbx" [value]="99" (change)="onGenreChange($event)"/>
     <label for="cbx-6" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -173,7 +173,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-7" class="inp-cbx" />
+    <input type="checkbox" id="cbx-7" class="inp-cbx" [value]="18" (change)="onGenreChange($event)"/>
     <label for="cbx-7" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -183,7 +183,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-8" class="inp-cbx" />
+    <input type="checkbox" id="cbx-8" class="inp-cbx" [value]="10751" (change)="onGenreChange($event)"/>
     <label for="cbx-8" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -193,7 +193,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-9" class="inp-cbx" />
+    <input type="checkbox" id="cbx-9" class="inp-cbx" [value]="14" (change)="onGenreChange($event)"/>
     <label for="cbx-9" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -203,7 +203,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-10" class="inp-cbx" />
+    <input type="checkbox" id="cbx-10" class="inp-cbx" [value]="36" (change)="onGenreChange($event)"/>
     <label for="cbx-10" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -213,7 +213,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-11" class="inp-cbx" />
+    <input type="checkbox" id="cbx-11" class="inp-cbx" [value]="27" (change)="onGenreChange($event)"/>
     <label for="cbx-11" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -223,7 +223,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-12" class="inp-cbx" />
+    <input type="checkbox" id="cbx-12" class="inp-cbx" [value]="10402" (change)="onGenreChange($event)"/>
     <label for="cbx-12" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -233,7 +233,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-13" class="inp-cbx" />
+    <input type="checkbox" id="cbx-13" class="inp-cbx" [value]="9648" (change)="onGenreChange($event)"/>
     <label for="cbx-13" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -243,7 +243,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-14" class="inp-cbx" />
+    <input type="checkbox" id="cbx-14" class="inp-cbx" [value]="10749" (change)="onGenreChange($event)"/>
     <label for="cbx-14" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -253,7 +253,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-15" class="inp-cbx" />
+    <input type="checkbox" id="cbx-15" class="inp-cbx" [value]="878" (change)="onGenreChange($event)"/>
     <label for="cbx-15" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -263,7 +263,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-16" class="inp-cbx" />
+    <input type="checkbox" id="cbx-16" class="inp-cbx" [value]="10770" (change)="onGenreChange($event)"/>
     <label for="cbx-16" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -273,7 +273,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-17" class="inp-cbx" />
+    <input type="checkbox" id="cbx-17" class="inp-cbx" [value]="53" (change)="onGenreChange($event)"/>
     <label for="cbx-17" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -283,7 +283,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-18" class="inp-cbx" />
+    <input type="checkbox" id="cbx-18" class="inp-cbx" [value]="10752" (change)="onGenreChange($event)"/>
     <label for="cbx-18" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">
@@ -293,7 +293,7 @@
     </div>
 
     <div class="checkbox-wrapper-46">
-    <input type="checkbox" id="cbx-19" class="inp-cbx" />
+    <input type="checkbox" id="cbx-19" class="inp-cbx" [value]="37" (change)="onGenreChange($event)"/>
     <label for="cbx-19" class="cbx"
         ><span>
         <svg viewBox="0 0 12 10" height="10px" width="12px">

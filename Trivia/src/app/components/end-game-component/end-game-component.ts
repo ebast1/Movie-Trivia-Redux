@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameDataService } from '../../services/game-data-service';
 
 @Component({
   selector: 'app-end-game-component',
@@ -9,7 +10,11 @@ import { Router } from '@angular/router';
 })
 export class EndGameComponent {
 
-  constructor(private router: Router) {}
+  finalScore: number = 0;
+
+  constructor(private router: Router, private gameData: GameDataService) {
+    this.finalScore = this.gameData.getScore();
+  }
 
   goToHome() {
     this.router.navigate(['/home']);
